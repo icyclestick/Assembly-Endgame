@@ -17,7 +17,7 @@ function App() {
 
   const numGuessesLeft = languages.length - 1
   const wrongGuessCount = guessedLetters.filter(letter => !currentWord.includes(letter)).length
-  const isGameWon = currentWord.split("").every(letter => guessedLetters(letter))
+  const isGameWon = currentWord.split("").every(letter => guessedLetters.includes(letter))
   const isGameLost = wrongGuessCount >= numGuessesLeft
   const isGameOver = isGameWon || isGameLost
   const lastGuessedLetter = guessedLetters[guessedLetters.length - 1]
